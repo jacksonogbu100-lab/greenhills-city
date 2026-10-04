@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=5" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -54,6 +54,7 @@
       </a>
       <nav class="nav" id="nav" data-nav>
         <a href="#plots">Plots</a>
+        <a href="#city">The city</a>
         <a href="#land">Location</a>
         <a href="#visit">Enquire</a>
       </nav>
@@ -121,6 +122,42 @@
         <a href="https://www.google.com/search?q=Greenhills+City+Jumong+Army-Efab+Abuja" target="_blank" rel="noopener">Search</a>
       </nav>
 
+      <section class="setting" id="city">
+        <div class="setting-lead">
+          <p class="kicker">A fast-developing city</p>
+          <h2>Abuja is still being drawn. Usuma is on that edge.</h2>
+          <p>
+            Greenhills City is land behind Katampe Extension, in Usuma District. From above, this
+            side of the capital is finished roofs and open ground at the same time. Usuma Dam is the
+            water that belongs to the district. Tap a picture to open it larger.
+          </p>
+        </div>
+        <figure>
+          <img
+            src="images/abuja-top-view.jpg"
+            alt="Aerial view of a fast-growing Abuja district, with new houses, bare plots, and a wide road toward the hills."
+            width="1280"
+            height="720"
+          />
+          <figcaption>
+            <span>Abuja, from above</span>
+            <p>Houses already up, plots still bare, and the road that keeps the edge of the city moving.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/usuma-dam.jpg"
+            alt="Aerial view of Usuma Dam, a long concrete wall holding a reservoir among green hills."
+            width="1280"
+            height="720"
+          />
+          <figcaption>
+            <span>Usuma Dam</span>
+            <p>The dam the district is named for. Water in the hills, and the city growing beyond them.</p>
+          </figcaption>
+        </figure>
+      </section>
+
       <section class="homes" aria-label="Houses printed on the offer sheet">
         <div class="home-copy">
           <p class="kicker">The houses on the sheet</p>
@@ -149,6 +186,7 @@
           <p>
             Both places use the same offer. The sheet gives the lump sum. Here you can see that three
             sizes share one rate, and the special parcels share a higher one. Choose a card to fill the enquiry.
+            The scale below draws every size as its true share of the 10,000 sqm parcel.
           </p>
         </div>
         <div class="rate-board">
@@ -211,6 +249,75 @@
             commercial land comes to ₦100 million. That size is an example, not a listed plot.
           </span>
         </button>
+
+        <div class="tools">
+          <article class="tool" id="scale">
+            <p class="kicker">One scale</p>
+            <h3>Every size, as a share of the largest.</h3>
+            <p>The bars match the land. 300 sqm is a thin line because it is 3% of 10,000 sqm. Tap a row to choose it.</p>
+            <ol class="scale">
+              <li>
+                <button type="button" data-plot="300 sqm — ₦45 million">
+                  <span class="scale-name">300 sqm</span>
+                  <span class="scale-track" aria-hidden="true"><span class="scale-bar" style="width: 3%"></span></span>
+                  <span class="scale-meta">₦45 million · 3% of 10,000</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-plot="600 sqm — ₦90 million">
+                  <span class="scale-name">600 sqm</span>
+                  <span class="scale-track" aria-hidden="true"><span class="scale-bar" style="width: 6%"></span></span>
+                  <span class="scale-meta">₦90 million · 6% of 10,000</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-plot="1,000 sqm — ₦150 million">
+                  <span class="scale-name">1,000 sqm</span>
+                  <span class="scale-track" aria-hidden="true"><span class="scale-bar" style="width: 10%"></span></span>
+                  <span class="scale-meta">₦150 million · 10% of 10,000</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-plot="2,000 sqm Special — ₦500 million">
+                  <span class="scale-name">2,000 sqm</span>
+                  <span class="scale-track" aria-hidden="true"><span class="scale-bar scale-bar-special" style="width: 20%"></span></span>
+                  <span class="scale-meta">₦500 million · special · 20%</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-plot="3,000 sqm Special — ₦750 million">
+                  <span class="scale-name">3,000 sqm</span>
+                  <span class="scale-track" aria-hidden="true"><span class="scale-bar scale-bar-special" style="width: 30%"></span></span>
+                  <span class="scale-meta">₦750 million · special · 30%</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-plot="10,000 sqm Special — ₦2.5 billion">
+                  <span class="scale-name">10,000 sqm</span>
+                  <span class="scale-track" aria-hidden="true"><span class="scale-bar scale-bar-special" style="width: 100%"></span></span>
+                  <span class="scale-meta">₦2.5 billion · special · the full bar</span>
+                </button>
+              </li>
+            </ol>
+            <p class="reading" id="reading">Choose a size. This line will say the rate, the total, and what changes on the next size up.</p>
+            <a class="btn btn-gold" id="picked-ask" hidden href="https://wa.me/2347035948055" target="_blank" rel="noopener">Ask on WhatsApp</a>
+          </article>
+
+          <article class="tool" id="metre">
+            <p class="kicker">Commercial metre</p>
+            <h3>Type a size. The printed rate does the sum.</h3>
+            <p>Commercial land is ₦200,000 per sqm. The sheet does not lock one size, so the total depends on the metres you ask for.</p>
+            <label>
+              Square metres
+              <input id="sqm" name="sqm" type="number" inputmode="numeric" min="1" max="100000" step="1" value="500" />
+            </label>
+            <p class="metre-out" id="metre-out" aria-live="polite"></p>
+            <p class="metre-work" id="metre-work"></p>
+            <button class="btn btn-gold" type="button" id="use-commercial">Use this size in the enquiry</button>
+            <button class="btn btn-line" type="button" id="copy-sheet">Copy the price list</button>
+            <p class="copy-note" id="copy-note" hidden>Copied. Paste it into a chat.</p>
+          </article>
+        </div>
       </section>
 
       <section class="split" id="land">
@@ -330,6 +437,14 @@
       <a href="#visit">Enquire</a>
     </div>
 
-    <script src="main.js"></script>
+    <dialog class="look" id="look">
+      <form method="dialog">
+        <button class="look-close" value="close">Close</button>
+      </form>
+      <img id="look-img" alt="" />
+      <p id="look-cap"></p>
+    </dialog>
+
+    <script src="main.js?v=5"></script>
   </body>
 </html>

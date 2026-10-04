@@ -53,6 +53,10 @@ textarea {
   font: inherit;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .skip {
   position: absolute;
   left: 1rem;
@@ -396,6 +400,54 @@ h2 {
   color: var(--muted);
 }
 
+.setting {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.setting-lead {
+  grid-column: 1 / -1;
+  padding: 0.2rem 0.15rem 0.35rem;
+}
+
+.setting-lead p:last-child {
+  max-width: 42rem;
+  margin: 0.7rem 0 0;
+  color: rgba(246, 243, 236, 0.78);
+}
+
+.setting figure {
+  margin: 0;
+  background: var(--green-2);
+  border: 1px solid rgba(228, 201, 138, 0.28);
+  padding: 0.55rem;
+}
+
+.setting img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.setting figcaption {
+  padding: 0.75rem 0.35rem 0.3rem;
+}
+
+.setting figcaption span {
+  display: block;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.setting figcaption p {
+  margin: 0.3rem 0 0;
+  color: rgba(246, 243, 236, 0.78);
+}
+
 .homes {
   display: grid;
   grid-template-columns: 1.2fr 0.7fr 0.7fr;
@@ -595,6 +647,201 @@ h2 {
 .commercial-note {
   max-width: 22rem;
   color: rgba(246, 243, 236, 0.75);
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.tool {
+  background: var(--green-2);
+  border: 1px solid rgba(228, 201, 138, 0.28);
+  padding: 1rem;
+}
+
+.tool .kicker {
+  color: var(--gold);
+}
+
+.tool h3 {
+  margin: 0.25rem 0 0;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.4vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  max-width: 16ch;
+}
+
+.tool > p {
+  margin: 0.65rem 0 0;
+  color: rgba(246, 243, 236, 0.78);
+}
+
+.scale {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.scale button {
+  display: grid;
+  grid-template-columns: 6.6rem 1fr;
+  column-gap: 0.7rem;
+  row-gap: 0.1rem;
+  width: 100%;
+  padding: 0.4rem 0.35rem;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.scale button:hover,
+.scale button.is-selected {
+  border-color: var(--gold);
+  background: rgba(228, 201, 138, 0.08);
+}
+
+.scale-name {
+  grid-row: span 2;
+  align-self: center;
+  font-weight: 600;
+}
+
+.scale-track {
+  display: block;
+  height: 9px;
+  align-self: end;
+  background: rgba(246, 243, 236, 0.08);
+}
+
+.scale-bar {
+  display: block;
+  height: 100%;
+  min-width: 6px;
+  background: var(--gold);
+}
+
+.scale-bar-special {
+  background: #f0d7a4;
+}
+
+.scale-meta {
+  color: rgba(246, 243, 236, 0.7);
+  font-size: 0.82rem;
+}
+
+.tool > p.reading {
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(228, 201, 138, 0.28);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--cream);
+}
+
+.tool label {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+}
+
+.tool input {
+  width: 100%;
+  border: 1px solid rgba(228, 201, 138, 0.4);
+  background: var(--green);
+  color: var(--cream);
+  padding: 0.7rem 0.75rem;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+}
+
+.tool > p.metre-out {
+  margin: 0.8rem 0 0;
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.tool > p.metre-work {
+  margin: 0.35rem 0 0;
+  color: rgba(246, 243, 236, 0.75);
+}
+
+.tool .btn {
+  margin-top: 0.75rem;
+  margin-right: 0.45rem;
+}
+
+.tool > p.copy-note {
+  margin: 0.55rem 0 0;
+  color: var(--gold);
+  font-size: 0.92rem;
+}
+
+#plots,
+#city,
+#land,
+#visit,
+.tool {
+  scroll-margin-top: calc(var(--header) + 12px);
+}
+
+.can-look {
+  cursor: zoom-in;
+}
+
+.can-look:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.look {
+  margin: auto;
+  width: min(980px, calc(100% - 1.4rem));
+  max-height: calc(100% - 1.4rem);
+  padding: 0.55rem;
+  border: 1px solid rgba(228, 201, 138, 0.45);
+  background: var(--green);
+  color: var(--cream);
+}
+
+.look::backdrop {
+  background: rgba(6, 14, 10, 0.78);
+}
+
+.look img {
+  width: 100%;
+  max-height: 74vh;
+  object-fit: contain;
+  background: #08140e;
+}
+
+.look p {
+  margin: 0.65rem 0.25rem 0.3rem;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.look-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  border: 0;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 0.4rem 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .split {
@@ -838,10 +1085,21 @@ textarea:focus-visible {
   .visit-grid,
   .plot-grid,
   .rate-board,
+  .setting,
   .homes,
+  .tools,
   .module-head,
   .contact-stack {
     grid-template-columns: 1fr;
+  }
+
+  .commercial {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scale button {
+    grid-template-columns: 5.6rem 1fr;
   }
 
   .homes img {
